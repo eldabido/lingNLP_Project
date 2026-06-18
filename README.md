@@ -19,8 +19,6 @@
 │   ├── detector.go              # Логика детектора
 │   ├── normalizer.go            # Нормализация текста
 │   ├── detector_test.go         # Тесты + экспорт метрик
-│   ├── detector_bench_test.go   # Бенчмарки
-│   ├── config.json              # Конфигурация
 │   └── config.json              # Словари и правила замен
 │
 ├── python/
@@ -30,7 +28,6 @@
 │   ├── baselines.py             # Обёртки над готовыми решениями
 │   └── evaluate.py              # Сравнительный анализ — главный скрипт
 │
-├── data/dataset.csv             # Датасет (генерируется автоматически)
 ├── results/                     # Метрики, графики, таблицы
 ├── requirements.txt
 └── README.md
@@ -45,13 +42,12 @@
 cd go
 go test -v -run TestDetector       # подробный отчёт в консоль
 go test -v -run TestDetectorCSV    # экспорт метрик и предсказаний в results/
-go test -bench=. -benchmem         # бенчмарки
 ```
 
 ### Python (ML-модели + сравнение)
 ```bash
 python -m venv venv
-source venv/bin/activate           # Windows: venv\Scripts\activate
+venv\Scripts\activate
 
 pip install scikit-learn pandas numpy matplotlib seaborn
 pip install transformers torch     # для rubert-sentiment и rubert-toxicity
