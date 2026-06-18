@@ -1,0 +1,19 @@
+# ── Основные (обязательные) ──
+scikit-learn>=1.3.0
+pandas>=2.0.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# ── Готовые решения ──
+# Все три используют transformers + torch:
+transformers>=4.30.0
+torch>=2.0.0
+
+# Модели скачаются автоматически при первом запуске:
+#   seara/rubert-tiny2-russian-sentiment  (~110 МБ)
+#   cointegrated/rubert-tiny-toxicity     (~45 МБ)
+
+# detoxify — multilingual BERT (XLM-R), ставит torch если ещё нет.
+# Модель скачается автоматически (~250 МБ).
+detoxify>=0.5.2
